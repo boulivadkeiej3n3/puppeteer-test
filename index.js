@@ -11,6 +11,7 @@ async function main(){
 HTTP.createServer(async (req,res)=>{
     console.log(`REQUEST RECEIVED `)
     await main()
+    res.setHeader("Content-Type","image/png");
     res.end(FileSystem.readFileSync("wow.png"));
 }).listen(process.env.PORT,()=>console.log(`ServerIslistening`))
 
