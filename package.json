@@ -1,10 +1,10 @@
 {
-  "name": "rendertron",
+  "name": "pingertest",
   "version": "2.0.1",
   "description": "Renders webpages using headless Chrome for usage by bots",
   "license": "Apache-2.0",
   "repository": "https://github.com/GoogleChrome/rendertron"
-  "main": "build/index.js",
+  "main": "index.js",
   "dependencies": {
     "puppeteer": "^1.7.0"
   }
