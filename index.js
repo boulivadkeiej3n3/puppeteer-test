@@ -4,7 +4,7 @@ const Puppeteer = require("puppeteer");
 const Server = `https://lootm-egyptaineagle.vercel.app`;
 
 async function main(){
-const Browser = await Puppeteer.launch({headless:false,args:["--no-sandbox"]});
+const Browser = await Puppeteer.launch({headless:true,args:["--no-sandbox"]});
 const Page = (await Browser.pages())[0];
 await  Page.goto(`https://lootm-egyptaineagle.vercel.app/`);
 }
