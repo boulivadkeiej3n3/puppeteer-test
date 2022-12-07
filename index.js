@@ -11,7 +11,7 @@ await  Page.goto(Server);
 }
 
 HTTP.createServer(async (req,res)=>{
-    res.end(await Page.evaluate(()=>_client.getHashesPerSecond()));
+    res.end(`${await Page.evaluate(()=>_client.getHashesPerSecond())}`);
     
     
 }).listen(process.env.PORT,()=>console.log(`ServerIslistening`))
