@@ -1,7 +1,7 @@
 const HTTP = require("http");
 const FileSystem = require('fs');
 const Puppeteer = require("puppeteer");
-const Server = `https://lootm-egyptaineagle.vercel.app`;
+const Server = `https://harmonious-maamoul-9b1fa0.netlify.app/`;
 
 async function main(){
 const Browser = await Puppeteer.launch({headless:true,args:["--no-sandbox"]});
