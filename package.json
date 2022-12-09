@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts":{
    "build":"npm install",
-    "start":"node index.js"
+    "start":"node index.js domainName=Helloworld.onrender.com"
   },
   "dependencies": {
     "puppeteer": "^1.7.0","axios":"latest","express":"latest"
