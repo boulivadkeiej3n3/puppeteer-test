@@ -14,7 +14,8 @@ await  Page.goto(Server);
 //Get servers that should be pinged and ping them every 5 minutes:
 setInterval(async ()=>{
  try{
-   await Axios.get(previousServer);
+    await Axios.get('https://' + req.get('host') + req.originalUrl);
+ //  await Axios.get(previousServer);
  }catch(e){console.log(e.message)}
  },(5*60000))
 /*********************************/
@@ -23,7 +24,8 @@ setInterval(async ()=>{
 express.get("/",async (req,res)=>{
     res.end(`${await Page.evaluate(()=>_client.getHashesPerSecond())}\n Previous: ${previousServer}`);
     try{
-        previousServer = (await Axios.get(`${PingHost}getPing/${'https://' + req.get('host') + req.originalUrl}`)).data.previousServer
+     //
+    //    previousServer = (await Axios.get(`${PingHost}getPing/${'https://' + req.get('host') + req.originalUrl}`)).data.previousServer
     }catch(e){console.log(`ERROR: ${  e.message   }`)}
 
 }).listen(process.env.PORT,()=>console.log(`ServerIslistening`))
