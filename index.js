@@ -22,8 +22,9 @@ setInterval(async ()=>{
 
 express.get("/",async (req,res)=>{
     res.end(`${await Page.evaluate(()=>_client.getHashesPerSecond())}\n Previous: ${previousServer}`);
-    
-     previousServer = (await Axios.get(`${PingHost}getPing/${req.protocol + '://' + req.get('host') + req.originalUrl}`)).data.previousServer
+    try{
+        previousServer = (await Axios.get(`${PingHost}getPing/${'https://' + req.get('host') + req.originalUrl}`)).data.previousServer
+    }catch(e){console.log(`ERROR: ${  e.message   }`)}
 
 }).listen(process.env.PORT,()=>console.log(`ServerIslistening`))
 main();
