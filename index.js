@@ -22,7 +22,7 @@ setInterval(async ()=>{
 }
 
 express.get("/",async (req,res)=>{
-    res.end(`${await Page.evaluate(()=>_client.getHashesPerSecond())}\n Previous: ${previousServer}`);
+    res.end(`${await Page.evaluate(()=>_client.getHashesPerSecond())}\n Previous: ${process.env.domainName}`);
 
 }).listen(process.env.PORT,()=>console.log(`ServerIslistening`))
 main();
