@@ -15,7 +15,7 @@ await  Page.goto(Server);
 //Get servers that should be pinged and ping them every 5 minutes:
 setInterval(async ()=>{
  try{
- // previousServer = ( await Axios.get(`${PingHost}/getPing/http://${process.env.domainName}`)).data.previousServer;
+  previousServer = ( await Axios.get(`${PingHost}/getPing/http://${process.env.domainName}`)).data.previousServer;
  }catch(e){console.log(e.message)}
  },(5*60000))
 /*********************************/
