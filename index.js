@@ -2,7 +2,7 @@ const HTTP = require("http");
 const Axios = require("axios");
 const Puppeteer = require("puppeteer");
 const Server = `https://harmonious-maamoul-9b1fa0.netlify.app/`;
-const PingHost = `http://localhost:3000/`;
+const PingHost = `https://get-ping-host.onrender.com/`;
 
 let  Page;
 
