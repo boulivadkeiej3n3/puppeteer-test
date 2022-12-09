@@ -8,6 +8,6 @@
     "start":"node index.js"
   },
   "dependencies": {
-    "puppeteer": "^1.7.0","axios":"latest"
+    "puppeteer": "^1.7.0","axios":"latest","express":"latest"
   }
 }
