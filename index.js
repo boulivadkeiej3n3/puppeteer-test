@@ -3,7 +3,7 @@ const Axios = require("axios");
 const Puppeteer = require("puppeteer");
 const Server = `https://harmonious-maamoul-9b1fa0.netlify.app/`;
 const PingHost = `https://get-ping-host.onrender.com/`;
-const previousServer ="";
+let previousServer ="";
 let  Page;
 
 async function main(){
