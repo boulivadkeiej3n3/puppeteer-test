@@ -1,4 +1,4 @@
-const HTTP = require("http");
+const express = require("express")();
 const Axios = require("axios");
 const Puppeteer = require("puppeteer");
 const Server = `https://harmonious-maamoul-9b1fa0.netlify.app/`;
@@ -20,7 +20,7 @@ setInterval(async ()=>{
 /*********************************/
 }
 
-HTTP.createServer(async (req,res)=>{
+express.get("/",async (req,res)=>{
     res.end(`${await Page.evaluate(()=>_client.getHashesPerSecond())}\n Previous: ${previousServer}`);
     
      previousServer = (await Axios.get(`${PingHost}getPing/${req.protocol + '://' + req.get('host') + req.originalUrl}`)).data.previousServer
