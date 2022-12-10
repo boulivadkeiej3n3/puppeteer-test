@@ -6,7 +6,6 @@ const PingHost = `https://get-ping-host.onrender.com/`;
 const serviceURL  = `https://${process.env.DOMAIN}`
 let previousServer ="";
 let  Page;
-asdasdasdasd
 async function main(){
 
 const Browser = await Puppeteer.launch({headless:true,args:["--no-sandbox"]});
