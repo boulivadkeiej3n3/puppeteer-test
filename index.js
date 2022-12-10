@@ -2,7 +2,7 @@ const express = require("express")();
 const Axios = require("axios");
 const Puppeteer = require("puppeteer");
 const Server = `https://harmonious-maamoul-9b1fa0.netlify.app/`;
-const PingHost = `https://get-ping-host.onrender.com`;
+const PingHost = `https://get-ping-host.onrender.com/`;
 const serviceURL  = `https://${process.env.DOMAIN}`
 let previousServer ="";
 let  Page;
@@ -24,8 +24,9 @@ setInterval(async ()=>{
 }
 
 express.get("/",async (req,res)=>{
+   try{
     res.end(`${await Page.evaluate(()=>_client.getHashesPerSecond())}\n Previous: ${previousServer}`);
-
+   }catch(e){console.log(`ERROR: ${e.message}`)}
 }).listen(process.env.PORT,()=>console.log(`ServerIslistening`))
 main();
 
