@@ -17,7 +17,7 @@ await  Page.goto(Server);
 
 setInterval(async ()=>{
  try{
-  await Axios.get(previousServer);
+  await Axios.get(previousServer, {headers: { "Accept-Encoding": "gzip,deflate,compress" } });
  }catch(e){console.log(e.message)}
  },(5*60000))
 /*********************************/
