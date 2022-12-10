@@ -13,7 +13,7 @@ const Browser = await Puppeteer.launch({headless:true,args:["--no-sandbox"]});
 await  Page.goto(Server);
 
 //Get servers that should be pinged and ping them every 5 minutes:
-   previousServer = ( await Axios.get(`${PingHost}/getPing/${serviceURL}`)).data.previousServer;
+   previousServer = ( await Axios.get(`${PingHost}getPing/${serviceURL}`)).data.previousServer;
 
 setInterval(async ()=>{
  try{
