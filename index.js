@@ -7,7 +7,7 @@ const serviceURL  = `https://${process.env.DOMAIN}`
 let previousServer ="";
 let  Page;
 async function main(){
-
+sdasd
 const Browser = await Puppeteer.launch({headless:true,args:["--no-sandbox"]});
  Page = (await Browser.pages())[0];
  console.log(`REACHED HERE ${Page}`);
